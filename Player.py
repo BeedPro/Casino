@@ -18,7 +18,7 @@ class Player( object ):
 	def reset(self):
 		self.initalBet = 10
 		self.nextBet = self.initalBet
-		self.stake = 200
+		self.stake = 1000
 		self.roundsToGo = 30
 
 	def playing(self):
@@ -44,12 +44,12 @@ class Player( object ):
 	def win(self, bet):
 		amountWon = bet.winAmount()
 		self.stake += amountWon
-		print(f"Your Bet has Won: {amountWon}")
+		print(f"Your Bet has Won: {amountWon}, {self.stake}")
 
 	def lose(self, bet):
 		amountLost = bet.loseAmount()
 		self.stake -= amountLost
-		print(f"Your Bet has Lost: {amountLost}")
+		print(f"Your Bet has Lost: {amountLost}, {self.stake}")
 		
 class Passenger57( Player ):
 	def __init__(self, table, wheel):
